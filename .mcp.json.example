@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "it-tools": {
+      "command": "uv",
+      "args": ["run", "--directory", "/path/to/poc.mcp-it-tools", "mcp-it-tools"],
+      "env": { "MCP_IT_ADAPTER": "demo" }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "_note": "Made-up data for a fictional company. Dates are stored as 'days ago' so the demo never goes stale.",
+  "users": [
+    {"email": "ada.lovelace@example.com", "name": "Ada Lovelace", "department": "Engineering", "title": "Staff Engineer", "manager": "grace.hopper@example.com"},
+    {"email": "grace.hopper@example.com", "name": "Grace Hopper", "department": "Engineering", "title": "Head of Engineering", "manager": null},
+    {"email": "alan.turing@example.com", "name": "Alan Turing", "department": "Data", "title": "Data Scientist", "manager": "grace.hopper@example.com"},
+    {"email": "katherine.johnson@example.com", "name": "Katherine Johnson", "department": "Finance", "title": "Financial Analyst", "manager": "margaret.hamilton@example.com"},
+    {"email": "margaret.hamilton@example.com", "name": "Margaret Hamilton", "department": "Finance", "title": "Finance Lead", "manager": null},
+    {"email": "linus.pauling@example.com", "name": "Linus Pauling", "department": "Sales", "title": "Account Executive", "manager": "hedy.lamarr@example.com"},
+    {"email": "hedy.lamarr@example.com", "name": "Hedy Lamarr", "department": "Sales", "title": "Sales Director", "manager": null},
+    {"email": "tim.berners@example.com", "name": "Tim Berners", "department": "IT", "title": "IT Engineer", "manager": "grace.hopper@example.com"},
+    {"email": "rosalind.franklin@example.com", "name": "Rosalind Franklin", "department": "Data", "title": "Analytics Engineer", "manager": "alan.turing@example.com"},
+    {"email": "dennis.ritchie@example.com", "name": "Dennis Ritchie", "department": "Engineering", "title": "Backend Engineer", "manager": "ada.lovelace@example.com"}
+  ],
+  "devices": [
+    {"serial": "C02DEMO0001", "name": "MBP-ADA", "owner": "ada.lovelace@example.com", "platform": "macOS", "os_version": "15.1", "disk_encrypted": true, "firewall_on": true, "check_in_days_ago": 0},
+    {"serial": "C02DEMO0002", "name": "MBP-GRACE", "owner": "grace.hopper@example.com", "platform": "macOS", "os_version": "14.2", "disk_encrypted": true, "firewall_on": true, "check_in_days_ago": 1},
+    {"serial": "C02DEMO0003", "name": "MBA-ALAN", "owner": "alan.turing@example.com", "platform": "macOS", "os_version": "15.0", "disk_encrypted": false, "firewall_on": true, "check_in_days_ago": 2},
+    {"serial": "PF0DEMO0004", "name": "LT-KATHERINE", "owner": "katherine.johnson@example.com", "platform": "Windows", "os_version": "10.0.22631", "disk_encrypted": true, "firewall_on": false, "check_in_days_ago": 0},
+    {"serial": "PF0DEMO0005", "name": "LT-MARGARET", "owner": "margaret.hamilton@example.com", "platform": "Windows", "os_version": "10.0.26100", "disk_encrypted": true, "firewall_on": true, "check_in_days_ago": 3},
+    {"serial": "C02DEMO0006", "name": "MBP-LINUS", "owner": "linus.pauling@example.com", "platform": "macOS", "os_version": "15.1", "disk_encrypted": true, "firewall_on": true, "check_in_days_ago": 41},
+    {"serial": "C02DEMO0007", "name": "MBP-HEDY", "owner": "hedy.lamarr@example.com", "platform": "macOS", "os_version": "15.1", "disk_encrypted": true, "firewall_on": true, "check_in_days_ago": 0},
+    {"serial": "C02DEMO0008", "name": "MBP-TIM", "owner": "tim.berners@example.com", "platform": "macOS", "os_version": "15.1", "disk_encrypted": true, "firewall_on": true, "check_in_days_ago": 0},
+    {"serial": "PF0DEMO0009", "name": "LT-ROSALIND", "owner": "rosalind.franklin@example.com", "platform": "Windows", "os_version": "10.0.19045", "disk_encrypted": false, "firewall_on": true, "check_in_days_ago": 5},
+    {"serial": "C02DEMO0010", "name": "MBP-DENNIS", "owner": "dennis.ritchie@example.com", "platform": "macOS", "os_version": "15.1", "disk_encrypted": true, "firewall_on": true, "check_in_days_ago": 1}
+  ],
+  "policy": {"min_os_version": {"macOS": "15.0", "Windows": "10.0.22631"}, "max_check_in_age_days": 30},
+  "groups": [
+    {"name": "all-staff", "description": "Everyone in the company", "members": ["ada.lovelace@example.com", "grace.hopper@example.com", "alan.turing@example.com", "katherine.johnson@example.com", "margaret.hamilton@example.com", "linus.pauling@example.com", "hedy.lamarr@example.com", "tim.berners@example.com", "rosalind.franklin@example.com", "dennis.ritchie@example.com"]},
+    {"name": "engineering", "description": "Engineering department", "members": ["ada.lovelace@example.com", "grace.hopper@example.com", "dennis.ritchie@example.com"]},
+    {"name": "data-team", "description": "Data and analytics", "members": ["alan.turing@example.com", "rosalind.franklin@example.com"]},
+    {"name": "finance", "description": "Finance department", "members": ["katherine.johnson@example.com", "margaret.hamilton@example.com"]},
+    {"name": "sales", "description": "Sales department", "members": ["linus.pauling@example.com", "hedy.lamarr@example.com"]},
+    {"name": "it-admins", "description": "IT administrators", "members": ["tim.berners@example.com"]},
+    {"name": "prod-db-readers", "description": "Read access to the production database", "members": ["ada.lovelace@example.com", "alan.turing@example.com", "dennis.ritchie@example.com"]},
+    {"name": "billing-admins", "description": "Can change billing settings", "members": ["margaret.hamilton@example.com", "ada.lovelace@example.com"]}
+  ],
+  "app_access": [
+    {"app": "CloudConsole", "user": "ada.lovelace@example.com", "last_login_days_ago": 2},
+    {"app": "CloudConsole", "user": "dennis.ritchie@example.com", "last_login_days_ago": 1},
+    {"app": "CloudConsole", "user": "alan.turing@example.com", "last_login_days_ago": 120},
+    {"app": "CloudConsole", "user": "linus.pauling@example.com", "last_login_days_ago": null},
+    {"app": "CRM", "user": "linus.pauling@example.com", "last_login_days_ago": 0},
+    {"app": "CRM", "user": "hedy.lamarr@example.com", "last_login_days_ago": 3},
+    {"app": "CRM", "user": "katherine.johnson@example.com", "last_login_days_ago": 95},
+    {"app": "ExpenseTool", "user": "katherine.johnson@example.com", "last_login_days_ago": 4},
+    {"app": "ExpenseTool", "user": "margaret.hamilton@example.com", "last_login_days_ago": 10},
+    {"app": "ExpenseTool", "user": "grace.hopper@example.com", "last_login_days_ago": 200},
+    {"app": "BI-Dashboards", "user": "alan.turing@example.com", "last_login_days_ago": 1},
+    {"app": "BI-Dashboards", "user": "rosalind.franklin@example.com", "last_login_days_ago": 0},
+    {"app": "BI-Dashboards", "user": "hedy.lamarr@example.com", "last_login_days_ago": 65},
+    {"app": "PasswordVault", "user": "tim.berners@example.com", "last_login_days_ago": 0},
+    {"app": "PasswordVault", "user": "ada.lovelace@example.com", "last_login_days_ago": 33}
+  ]
+}
