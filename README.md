@@ -107,12 +107,17 @@ credentials read-only too, so safety doesn't rely on the code alone.
 
 ## Project layout
 
-```
-src/mcp_it_tools/   server, tools, viewer, adapters, demo data
-tests/              unit tests for tools, an end-to-end MCP test, viewer test
-scripts/            demo_client.py, the transcript generator
-docs/               transcript and screenshots
-```
+Each folder has its own README:
+
+| Folder | What's in it |
+|---|---|
+| [src/](src/README.md) | Holds the package |
+| [src/mcp_it_tools/](src/mcp_it_tools/README.md) | Server, tools, viewer, demo data; table of the four tools |
+| [src/mcp_it_tools/adapters/](src/mcp_it_tools/adapters/README.md) | Adapter interface and how to add a real system |
+| [tests/](tests/README.md) | What each test checks |
+| [scripts/](scripts/README.md) | The demo client that makes the transcript |
+| [docs/](docs/README.md) | Transcript and screenshots |
+| [.github/](.github/README.md) | CI workflow |
 
 ## License
 
