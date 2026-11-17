@@ -64,6 +64,12 @@ def access_view(a, q) -> str:
     app = q.get("app", [apps[0]])[0]
     days = int(q.get("days", ["60"])[0])
     res = tools.find_inactive_app_users(a, app, days)
+    if "error" in res:
+        msg = f"Unknown app '{esc(app)}'. Pick one of: {esc(', '.join(apps))}"
+        res = tools.find_inactive_app_users(a, apps[0], days)  # show a real app instead of an empty table
+    else:
+        msg = ""
+    app = res["app"]  # canonical spelling, so the heading and dropdown match the table
     opts = "".join(f"<option {'selected' if x == app else ''}>{esc(x)}</option>" for x in apps)
     form = (f"<form><select name=app>{opts}</select><input name=days type=number value={days} style='width:90px'>"
             f"<button>Find inactive</button></form>")
@@ -74,7 +80,8 @@ def access_view(a, q) -> str:
         + "</td></tr>"
         for x in a.list_app_access() if x.app == res.get("app"))
     return (f"<div class=card><h2>Who has {esc(app)} but has not signed in for {days}+ days</h2>{form}"
-            f"<table><tr><th>User</th><th>Last login</th><th>Status</th></tr>{rows}</table></div>")
+            + (f"<div class='pill bad' style='margin-bottom:10px'>{msg}</div>" if msg else "")
+            + f"<table><tr><th>User</th><th>Last login</th><th>Status</th></tr>{rows}</table></div>")
 
 
 def groups_view(a) -> str:
