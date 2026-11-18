@@ -31,7 +31,8 @@ async def main():
             for t in tools:
                 a = t.annotations
                 ro = getattr(a, "read_only_hint", getattr(a, "readOnlyHint", None))
-                print(f"- `{t.name}` (read-only: {ro}) - {" ".join(t.description.split())}")
+                description = " ".join((t.description or "").split())
+                print(f"- `{t.name}` (read-only: {ro}) - {description}")
             for name, args in CALLS:
                 res = await s.call_tool(name, args)
                 text = "\n".join(c.text for c in res.content if hasattr(c, "text"))
